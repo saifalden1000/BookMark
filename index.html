@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ~ web fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ~ style & bootstrap & font awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>BookMark</title>
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center flex-column py-5"
+    >
+      <h1 class="display-5 position-relative">BookMarker</h1>
+      <!-- ~ input section -->
+      <section
+        class="input-section mt-5 p-4 w-100 d-flex justify-content-center align-items-center flex-column mb-5"
+      >
+        <h2 class="mb-5">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div class="form-floating w-100 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="SiteName"
+            placeholder="SiteName"
+          />
+          <label for="SiteName"
+            ><i class="fa-solid fa-book"></i> Site Name</label
+          >
+        </div>
+        <div class="form-floating w-100 mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="SiteURL"
+            placeholder="SiteURL"
+          />
+          <label for="SiteURL"><i class="fa-solid fa-link"></i> Site URL</label>
+        </div>
+        <button
+          onclick="addSite()"
+          id="addButton"
+          class="btn btn-info py-2 px-5"
+        >
+          Submit
+        </button>
+        <button
+          onclick="updateSite()"
+          id="updateButton"
+          class="btn btn-warning py-2 px-5 d-none"
+        >
+          update
+        </button>
+      </section>
+
+      <!-- ~ displayed section -->
+      <section class="listed-sites w-100">
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="search list"
+          id="searchList"
+          oninput="search(this.value)"
+        />
+        <div class="bg-light row text-center py-3 mb-4">
+          <p class="col-2 m-0">Index</p>
+          <p class="col-7 m-0">Website Name</p>
+          <p class="col-3 m-0">Action</p>
+        </div>
+
+        <div id="sitesData"></div>
+      </section>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

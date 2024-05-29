@@ -1,0 +1,42 @@
+body {
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: #f8ecde;
+}
+h1 {
+  font-family: "Pacifico", cursive;
+}
+
+h2 {
+  font-family: "Righteous", sans-serif;
+  background: linear-gradient(to right, #3ca55c, #b5ac49);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+h1::before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 30%;
+  background-color: #fec260;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.3s all;
+}
+h1:hover::before {
+  height: 100%;
+}
+.input-section {
+  border-style: dotted;
+  border-width: 2px 0;
+}
+.listed-sites span {
+  display: flex;
+  height: 25px;
+  width: 25px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
